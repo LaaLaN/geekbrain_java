@@ -14,7 +14,7 @@ public class PZ_lessons1 {
         double itIsDouble = 0.12312312313; //very long 10degree308
         boolean jesusAlife = true;
         String itIsString = "Не примитивный но очень часто используется";
-
+        //какое то изменение
         int a = -1;
         short b = -90;
         byte c = 100;
@@ -23,7 +23,7 @@ public class PZ_lessons1 {
         long year = insert.nextLong();
 
         sixth_method_my(year);
-       sixth_method_pc(b);
+        sixth_method_pc(b);
 
 
     }
