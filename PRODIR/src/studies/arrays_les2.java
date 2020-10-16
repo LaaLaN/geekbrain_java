@@ -110,6 +110,7 @@ public class arrays_les2 {
         array2 = arrayMove(array2,delta);
         System.out.println("Сдвинутый массив: ");
         showArrayInt(array2);
+        //это последние изменения. и тут вроде все готово.
     }
     public static int[] arrayMove (int[] array, int delta){
         if (delta == 0){return array;}
