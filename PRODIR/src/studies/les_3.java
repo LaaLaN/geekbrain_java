@@ -1,36 +1,41 @@
 package studies;
 
-import java.util.*;
+import java.util.Scanner;
+
+
 
 public class les_3 {
     static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        System.out.println("\n*** Игра - угадай число.");
+        /*System.out.println("\n*** Игра - угадай число.");
         guessGame();
-        System.out.println("\n*** Игра - угадай слово eng. version.");
+        */System.out.println("\n*** Игра - угадай слово eng. version.");
         wordsGame();
     }
 
     public static void guessGame() {
         int playAgain = 0;
         while (playAgain == 0) {
-            System.out.println("Ваша задача - угадать число от 0 до 100.");
-            byte maxTryCount = 7;
+            byte tryCount, maxTryCount = 7;
             int playerAnswer;
+            System.out.println("Ваша задача - угадать число от 0 до 100. За " + maxTryCount + " попыток. Удачи!");
             byte answer = (byte) (Math.random() * 100); // загадываем число
-            for (byte tryCount = 1; tryCount <= maxTryCount; tryCount++) {
+            for (tryCount = 1; tryCount <= maxTryCount; tryCount++) {
                 playerAnswer = scanner.nextByte();
                 if (playerAnswer == answer) {
                     System.out.println("*** Вы угадали! ***");
                     break;
                 } else if (playerAnswer > answer) System.out.println("Загаданное число МЕНЬШЕ.");
                 else System.out.println("Загаданное число БОЛЬШЕ");
+                if (tryCount == maxTryCount) System.out.println("Нет больше попыток. Вы проиграли.");
             }
+            //if (tryCount == maxTryCount) System.out.println("Нет больше попыток. Вы проиграли.");
             System.out.println("\nСыграть еще разок?\nВведите 1 - если 'нет'; 0 - если 'да'");
             playAgain = scanner.nextInt();
+
         }
-   scanner.close(); }
+    }
 
     public static void wordsGame() {
         byte protect = 0;
@@ -40,14 +45,22 @@ public class les_3 {
                 "peanut", "pear", "pepper", "pineapple", "pumpkin", "potato"};
         byte n = (byte) (Math.random() * words.length);
         String quation = words[n]; //загадали слово
-        System.out.println("Программа загадала слово до " + quation.length() + " символов.\nВаша задача угадать слово.");
+        System.out.println("Программа загадала слово.\nВаша задача угадать его. Удачи!");
         String answer = "";
         while (!(answer.equals(quation)) || protect > 50) {
             System.out.println("Введите слово:");
-            answer = scanner.nextLine(); // считываем ответ игрока
+            //System.out.println("");
+            answer = scanner.next(); // считываем ответ игрока
             while (!(answer.length() == quation.length())) {
-                System.out.println("Недопустимое количество символов!\nНапоминаю длинна слова <= " + quation.length() + " символов.");
-                answer = scanner.nextLine(); // считываем ответ игрока
+                //тут надо выровнять ответ и вопрос, лтбо добавить # если короткий ответ, либо заменить хвост на # если длинный
+                if (answer.length() < quation.length()) answer += "#";
+                else {
+                    byte delta = (byte) (quation.length() - answer.length());
+                    StringBuffer buffer = new StringBuffer(answer);
+                    buffer.delete(buffer.length() + delta, buffer.length());
+                    answer = buffer.toString();
+                    System.out.println(answer);
+                }
             }
             answer = answer.toLowerCase(); // переводим в нижний регистр
             if (answer.equals(quation)) {
@@ -60,6 +73,7 @@ public class les_3 {
                         //System.out.println(i + " " + quation.charAt(i));
                     }
                 }
+                System.out.println("Загаданное слово: ");
                 printword(deltaWords);
                 System.out.println("\nПродолжайте угадывать.");
             }
