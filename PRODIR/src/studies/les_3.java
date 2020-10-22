@@ -2,15 +2,14 @@ package studies;
 
 import java.util.Scanner;
 
-
-
 public class les_3 {
     static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        /*System.out.println("\n*** Игра - угадай число.");
-        guessGame();
-        */System.out.println("\n*** Игра - угадай слово eng. version.");
+        //System.out.println("\n*** Игра - угадай число.");
+        //guessGame();
+        // для того что бы поиграть в первую игру, снимите комментарий
+        System.out.println("\n*** Игра - угадай слово eng. version.");
         wordsGame();
     }
 
@@ -30,7 +29,6 @@ public class les_3 {
                 else System.out.println("Загаданное число БОЛЬШЕ");
                 if (tryCount == maxTryCount) System.out.println("Нет больше попыток. Вы проиграли.");
             }
-            //if (tryCount == maxTryCount) System.out.println("Нет больше попыток. Вы проиграли.");
             System.out.println("\nСыграть еще разок?\nВведите 1 - если 'нет'; 0 - если 'да'");
             playAgain = scanner.nextInt();
 
@@ -70,7 +68,6 @@ public class les_3 {
                 for (int i = 0; i <= answer.length() - 1; i++) {
                     if (answer.charAt(i) == quation.charAt(i)) {
                         deltaWords[i] = quation.charAt(i);
-                        //System.out.println(i + " " + quation.charAt(i));
                     }
                 }
                 System.out.println("Загаданное слово: ");
