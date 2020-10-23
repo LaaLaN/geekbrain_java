@@ -2,7 +2,7 @@ package studies;
 
 import java.util.Scanner;
 
-public class PZ_lessons1 {
+public class lesson1 {
     //psvm
     static Scanner insert = new Scanner(System.in);
 
