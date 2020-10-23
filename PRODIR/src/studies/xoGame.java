@@ -3,7 +3,7 @@ package studies;
 import java.util.Scanner;
 import java.util.Random;
 
-public class Main {
+public class xoGame {
 
     static final int Size_form = 5;
     static final char player1 = '0';
