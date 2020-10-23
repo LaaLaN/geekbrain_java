@@ -4,7 +4,7 @@ import java.lang.Object;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class arrays_les2 {
+public class lesson2 {
     //psvm
     public static void main(String[] args) {
         //задание №1
