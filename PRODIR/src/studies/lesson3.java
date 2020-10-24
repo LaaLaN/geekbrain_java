@@ -50,8 +50,7 @@ public class les_3 {
             //System.out.println("");
             answer = scanner.next(); // считываем ответ игрока
             while (!(answer.length() == quation.length())) {
-                //тут надо выровнять ответ и вопрос, лтбо добавить # если короткий ответ, либо заменить хвост на # если длинный
-                if (answer.length() < quation.length()) answer += "#";
+                if (answer.length() < quation.length()) answer += "#"; // выравниваем массивы вопроса и ответа
                 else {
                     byte delta = (byte) (quation.length() - answer.length());
                     StringBuffer buffer = new StringBuffer(answer);
