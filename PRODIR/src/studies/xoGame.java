@@ -48,6 +48,14 @@ public class xoGame {
         } while (!isCellValid(x, y));
         form[y][x] = pcgamer;
     }
+    static void movePlayer2(String why) {
+        int x, y;
+        do {
+            x = (int) (Math.random() * Size_form - 1);
+            y = (int) (Math.random() * Size_form - 1);;
+        } while (!isCellValid(x, y));
+        form[y][x] = pcgamer;
+    }
 
     static boolean isCellValid(int x, int y) {
         if (form[y][x] == NULL) return true;
@@ -109,7 +117,7 @@ public class xoGame {
                 System.out.println("Ничья");
                 break;
             }
-            movePlayer2();
+            movePlayer2("pc");
             System.out.println();
             printField();
             if (checkWin(pcgamer)){
