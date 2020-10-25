@@ -6,6 +6,7 @@ import java.util.Random;
 public class xoGame {
 
     static final int Size_form = 5;
+    static final int winPoint = 4;
     static final char player1 = '0';
     static final char pcgamer = 'X';
     static final char NULL = '!';
@@ -70,14 +71,14 @@ public class xoGame {
             for (int j = 0; j < Size_form; j++){
                 if (form[i][j] == sym) result++;
             }
-            if (result == Size_form) return true;
+            if (result == winPoint) return true;
         }
         for (int i = 0; i < Size_form; i++){
             int result = 0;
             for (int j = 0; j < Size_form; j++){
                 if (form[j][i] == sym) result++;
             }
-            if (result == Size_form) return true;
+            if (result == winPoint) return true;
         }
         int first = 0; // проверка диагонали
         for (int i = 0; i < Size_form; i++){ // проверка диагонали
@@ -86,11 +87,11 @@ public class xoGame {
 
             }
         }
-        if (first == Size_form) return true; // проверка диагонали
+        if (first == winPoint) return true; // проверка диагонали
         int second = 0;
         for (int i = 0, j = Size_form-1; i < Size_form && j >=0; i++, j--)
         { if (form[i][j] == sym) second++; }
-        if (second == Size_form) return true;
+        if (second == winPoint) return true;
         else return false;
     }
 
