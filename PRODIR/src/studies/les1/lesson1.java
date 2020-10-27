@@ -1,4 +1,4 @@
-package studies;
+package studies.les1;
 
 import java.util.Scanner;
 

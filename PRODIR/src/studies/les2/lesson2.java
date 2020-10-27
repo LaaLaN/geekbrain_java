@@ -1,4 +1,4 @@
-package studies;
+package studies.les2;
 
 import java.lang.Object;
 import java.util.Arrays;

@@ -1,4 +1,4 @@
-package studies;
+package studies.les4;
 
 import java.util.Scanner;
 import java.util.Random;
