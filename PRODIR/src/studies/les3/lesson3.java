@@ -2,7 +2,7 @@ package studies.les3;
 
 import java.util.Scanner;
 
-public class les_3 {
+public class lesson3 {
     static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
